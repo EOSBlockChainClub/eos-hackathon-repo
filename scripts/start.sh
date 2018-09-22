@@ -15,7 +15,7 @@ docker run --name nodeos -d -p 8888:8888 --network eosdev \
 --access-control-allow-origin=* --contracts-console --http-validate-host=false"
 
 docker run -d --name keosd --network=eosdev -p 9876:9876 \
--i eosio/eos-dev /bin/bash -c "keosd --http-server-address=0.0.0.0:9876"
+-i eosio/eos-dev:v1.2.5 /bin/bash -c "keosd --http-server-address=0.0.0.0:9876"
 
 
 IPADDRESS="$(docker network inspect eosdev | jq -r '.[].Containers[] | select(.Name=="keosd").IPv4Address')"
