@@ -9,7 +9,7 @@ const dataProviderAcc = "dataprovider";
 const hashString = "Hahash";
 
 const eos = Eos({
-    keyProvider: allKeys.requesterActive.privateKey
+    keyProvider: allKeys.requesterOwner.privateKey
 });
 
 eos.contract("agreement")
