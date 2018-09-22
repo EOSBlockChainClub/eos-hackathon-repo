@@ -1,4 +1,4 @@
-echo "Please enter the username of the requester"
+$echo "Please enter the username of the requester"
 read requester
 
 echo "Please enter the username of the dataprovider"
@@ -14,4 +14,4 @@ hash="$(echo $hashString | cut -d' ' -f1)" # get hash without filename
 
 echo $hash
 
-cleos push action agreement sendagr '["$requester", "$dataprovider", "$hash"]' -p $requester@active
+cleos push action agreement sendagr '["'${requester}'", "'${dataprovider}'", "'${hash}'"]' -p $requester@active
