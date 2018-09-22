@@ -14,22 +14,33 @@
     <div id="main">
 
         <section>
-            <h1>Test</h1>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Switch Page
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">1</a>
+                    <a class="dropdown-item" href="#">2</a>
+                </div>
+            </div>
         </section>
+
+        <div class="spacer"></div>
         
-        <section id="part-1">
-            <h2>1</h2>
+        <section id="part-1" class="card-shadow">
+            <h2>1: Send Agreement</h2>
             <div class="form-group">
                 <input type="text" class="form-control" id="input-1a" placeholder="Input #">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </section>
         
-        <section id="part-2">
-        </section>
+        <!--<section id="part-2">
+        </section>-->
         
-        <section id="part-3">
-            <h2>3</h2>
+        <section id="part-3" class="card-shadow">
+            <h2>3: Check Agreement</h2>
             <div class="form-group">
                 <input type="text" class="form-control" id="input-3a" placeholder="Input Account">
                 <input type="text" class="form-control" id="input-3b" placeholder="Input #">
@@ -37,13 +48,51 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </section>
         
-        <section id="part-4">
-            <h2>4</h2>
+        <section id="part-4" class="card-shadow">
+            <h2>4: Send Data</h2>
             <div class="form-group">
                 <input type="text" class="form-control" id="input-4a" placeholder="Input # Agreement">
-                <input type="text" class="form-control" id="input-4a" placeholder="Input # Data">
+                <input type="text" class="form-control" id="input-4b" placeholder="Input # Data">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+        </section>
+
+        <section id="part-5" class="card-shadow">
+            <h2>5: Trace Data</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" id="input-5a" placeholder="Input # Data">
+                <input type="text" class="form-control" id="input-5b" placeholder="Input Requester Account">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </section>
+
+        <section>
+            <table class="table table-striped card-shadow">
+                <thead>
+                    <tr>
+                        <th scope="col">Origin</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Agreement #</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!--<tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>-->
+                </tbody>
+            </table>
         </section>
 
     </div>
