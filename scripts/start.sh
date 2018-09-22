@@ -58,10 +58,10 @@ cleos create key --file /opt/eosio/bin/keys/Bkeyowner.txt
 
 ## Import Keys
 
-pbkeya="$(grep Public ./keys/Akeyactive.txt | awk '{print $3}')"
-pvkeya="$(grep Private ./keys/Akeyactive.txt | awk '{print $3}')"
-pbkeyo="$(grep Public ./keys/Akeyowner.txt | awk '{print $3}')"
-pvkeyo="$(grep Private ./keys/Akeyowner.txt | awk '{print $3}')"
+pbkeya="$(grep Public ./keys/requesterkeyactive.txt | awk '{print $3}')"
+pvkeya="$(grep Private ./keys/requesterkeyactive.txt | awk '{print $3}')"
+pbkeyo="$(grep Public ./keys/requesterkeyowner.txt | awk '{print $3}')"
+pvkeyo="$(grep Private ./keys/requesterkeyowner.txt | awk '{print $3}')"
 
 cleos wallet import --private-key ${pvkeya}
 cleos wallet import --private-key ${pvkeyo}
@@ -70,10 +70,10 @@ cleos wallet import --private-key ${pvkeyo}
 
 cleos create account eosio requester ${pbkeya} ${pbkeyo}
 
-pbkeya="$(grep Public ./keys/Bkeyactive.txt | awk '{print $3}')"
-pvkeya="$(grep Private ./keys/Bkeyactive.txt | awk '{print $3}')"
-pbkeyo="$(grep Public ./keys/Bkeyowner.txt | awk '{print $3}')"
-pvkeyo="$(grep Private ./keys/Bkeyowner.txt | awk '{print $3}')"
+pbkeya="$(grep Public ./keys/dataproviderkeyactive.txt | awk '{print $3}')"
+pvkeya="$(grep Private ./keys/dataproviderkeyactive.txt | awk '{print $3}')"
+pbkeyo="$(grep Public ./keys/dataproviderkeyowner.txt | awk '{print $3}')"
+pvkeyo="$(grep Private ./keys/dataproviderkeyowner.txt | awk '{print $3}')"
 
 cleos wallet import --private-key ${pvkeya}
 cleos wallet import --private-key ${pvkeyo}
