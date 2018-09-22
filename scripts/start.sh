@@ -1,4 +1,4 @@
-e## See https://developers.eos.io/eosio-nodeos/docs/docker-quickstart
+## See https://developers.eos.io/eosio-nodeos/docs/docker-quickstart
 
 
 docker network create eosdev
