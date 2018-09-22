@@ -1,0 +1,14 @@
+{
+  "name": "pathsapp",
+  "version": "0.0.1",
+  "description": "API Interface for path finding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "B9lab Ltd.",
+  "license": "ISC",
+  "dependencies": {
+    "eosjs": "^16.0.8"
+  }
+}
