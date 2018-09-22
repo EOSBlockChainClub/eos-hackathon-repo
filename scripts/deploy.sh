@@ -12,4 +12,10 @@ pvkeya="$(grep Private ./keys/userkeyactive.txt | awk '{print $3}')"
 pbkeyo="$(grep Public ./keys/userkeyowner.txt | awk '{print $3}')"
 pvkeyo="$(grep Private ./keys/userkeyowner.txt | awk '{print $3}')"
 
-cleos create account eosio user ${pbkeya} ${pbkeyo}
+
+cleos wallet import --private-key ${pvkeya}
+cleos wallet import --private-key ${pvkeyo}
+
+cleos create account eosio agreement ${pbkeya} ${pbkeyo}
+
+cleos set contract agreement /opt/eosio/bin/contracts/agreement/ -p agreement@active
