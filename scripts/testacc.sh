@@ -2,7 +2,7 @@
 
 mkdir -p ./keys/testkeys
 
-for i in {a..j}
+for i in {a..g}
 do
   cleos create key --file /opt/eosio/bin/keys/testkeys/testkeyactive$i.txt
   cleos create key --file /opt/eosio/bin/keys/testkeys/testkeyowner$i.txt
