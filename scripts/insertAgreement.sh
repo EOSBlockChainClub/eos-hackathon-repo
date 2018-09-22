@@ -1,4 +1,4 @@
-$echo "Please enter the username of the requester"
+echo "Please enter the username of the requester"
 read requester
 
 echo "Please enter the username of the dataprovider"
