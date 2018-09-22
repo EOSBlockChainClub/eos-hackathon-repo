@@ -5,6 +5,7 @@ docker network create eosdev
 
 docker run --name nodeos -d -p 8888:8888 --network eosdev \
 --mount type=bind,src="$(pwd)"/contracts,dst=/opt/eosio/bin/contracts \
+--mount type=bind,src="$(pwd)"/keys,dst=/opt/eosio/bin/keys \
 eosio/eos-dev:v1.2.5  \
 /bin/bash -c "nodeos -e -p eosio --plugin eosio::producer_plugin \
 --plugin eosio::history_plugin --plugin eosio::chain_api_plugin \
