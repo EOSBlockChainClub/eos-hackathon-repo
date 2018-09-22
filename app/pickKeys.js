@@ -2,16 +2,16 @@ const fs = require("fs");
 
 module.exports = function() {
 
-    const privateKeyExpr = /^Private key: ([0-9a-zA-Z]{51})$/gm;
-    const publicKeyExpr = /^Public key: (EOS[0-9a-zA-Z]{50})$/gm;
-
     const extract = function(fileName) {
+        const privateKeyExpr = /^Private key: ([0-9a-zA-Z]{51})$/gm;
+        const publicKeyExpr = /^Public key: (EOS[0-9a-zA-Z]{50})$/gm;
+
         const content = fs.readFileSync(__dirname + "/../keys/" + fileName).toString();
-        const privateKeyMatch = content.match(privateKeyExpr);
-        const publicKeyMatch = content.match(publicKeyExpr);
+        const privateKeyMatch = privateKeyExpr.exec(content);
+        const publicKeyMatch = publicKeyExpr.exec(content);
         return {
-            privateKey: privateKeyMatch[0],
-            publicKey: publicKeyMatch[0]
+            privateKey: privateKeyMatch[1],
+            publicKey: publicKeyMatch[1]
         };
     };
 
