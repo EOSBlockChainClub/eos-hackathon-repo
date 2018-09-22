@@ -9,7 +9,8 @@ body {
 #part-4,
 #part-5 {
   margin-bottom: 100px;
-  padding: 20px; }
+  padding: 20px;
+  max-width: 500px; }
 
 #main input {
   max-width: 250px;
@@ -21,3 +22,7 @@ body {
 .card-shadow {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 5px; }
+
+.app-dropdown {
+  max-width: 500px;
+  padding: 20px; }
