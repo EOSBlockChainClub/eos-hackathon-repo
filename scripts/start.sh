@@ -1,6 +1,8 @@
 ## See https://developers.eos.io/eosio-nodeos/docs/docker-quickstart
 
 
+# Create containers
+
 docker network create eosdev
 
 docker run --name nodeos -d -p 8888:8888 --network eosdev \
@@ -19,7 +21,27 @@ docker run -d --name keosd --network=eosdev -p 9876:9876 \
 -i eosio/eos-dev:v1.2.5 /bin/bash -c "keosd --http-server-address=0.0.0.0:9876"
 
 
-IPADDRESS="$(docker network inspect eosdev | jq -r '.[].Containers[] | select(.Name=="keosd").IPv4Address')"
+# Create aliases
 
+IPADDRESS="$(docker network inspect eosdev | jq -r '.[].Containers[] | select(.Name=="keosd").IPv4Address')"
 alias cleos='docker exec -it nodeos /opt/eosio/bin/cleos --url http://localhost:8888 --wallet-url http://${IPADDRESS%/*}:9876'
 alias eosiocpp='docker exec nodeos eosiocpp'
+
+
+# Create accounts
+
+cleos wallet create --file /opt/eosio/bin/keys/masterpass.txt
+cleos create key --file /opt/eosio/bin/keys/userkeyactive.txt
+cleos create key --file /opt/eosio/bin/keys/userkeyowner.txt
+
+cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3 # default private key of eosio
+
+pbkeya="$(grep Public ./keys/userkeyactive.txt | awk '{print $3}')"
+pvkeya="$(grep Private ./keys/userkeyactive.txt | awk '{print $3}')"
+pbkeyo="$(grep Public ./keys/userkeyowner.txt | awk '{print $3}')"
+pvkeyo="$(grep Private ./keys/userkeyowner.txt | awk '{print $3}')"
+
+cleos wallet import --private-key ${pvkeya}
+cleos wallet import --private-key ${pvkeyo}
+
+cleos create account eosio agreement ${pbkeya} ${pbkeyo}
