@@ -48,13 +48,13 @@ cleos create account eosio agreement ${pbkeya} ${pbkeyo}
 
 ## Create keys for account A
 
-cleos create key --file /opt/eosio/bin/keys/Akeyactive.txt
-cleos create key --file /opt/eosio/bin/keys/Akeyowner.txt
+cleos create key --file /opt/eosio/bin/keys/requesterkeyactive.txt
+cleos create key --file /opt/eosio/bin/keys/requesterkeyowner.txt
 
 
 ## Create keys for account B
-cleos create key --file /opt/eosio/bin/keys/Bkeyactive.txt
-cleos create key --file /opt/eosio/bin/keys/Bkeyowner.txt
+cleos create key --file /opt/eosio/bin/keys/dataproviderkeyactive.txt
+cleos create key --file /opt/eosio/bin/keys/dataproviderkeyowner.txt
 
 ## Import Keys
 
