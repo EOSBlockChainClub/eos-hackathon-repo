@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 const Eos = require("eosjs");
-const allKeys = require("../../../app/pickKeys.js")();
+//const allKeys = require("../../../app/pickKeys.js")();
 const agreementContractName = "agreement";
 
 
 export default class SendAgreement extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          eosClient: props.props.eos
+        };
+    }
 
     handleSubmit(event) {
         event.preventDefault();
+        /*
         const eos = Eos({
                 keyProvider: allKeys[info.requesterOwnerName].privateKey
             });
@@ -46,31 +53,11 @@ export default class SendAgreement extends Component {
                     status: "error",
                     error: "Failed to send\n" + error.message
                 }));
-        };
-
-        
-        console.log(this.surveyNumber.value);
-        let surveyNumber = this.surveyNumber.value;
-        let question = this.question.value;
-
-        this.state.eos.contract('survey').then(survey => {
-            survey.createsurvey(
-                {surveyNumber:surveyNumber, question:question},
-                { scope: "survey", authorization: [{
-                actor: "survey",
-                permission: 'active',
-                }]
-            })
-        }).then(() => {
-          this.updateSurveys(); 
-        })
-    }
+        */
+    };
 
     render() {
         return (
-            <div className="sendagreement">
-                { this.props.children }
-            </div>
             <section id="part-1" class="card-shadow">
                 <h2>1: Request Agreement</h2>
                 <div class="form-group">
@@ -78,14 +65,14 @@ export default class SendAgreement extends Component {
                         class="form-control"
                         id="input-1a"
                         value={ this.props.dataProvider }
-                        placeholder="Data provider account">
+                        placeholder="Data provider account"/>
                     <input type="text"
                         class="form-control"
                         id="input-1b"
                         value={ this.props.agreementHash }
-                        placeholder="Agreement hash">
+                        placeholder="Agreement hash"/>
                 </div>
-                <button type="submit" class="btn btn-primary" onClick={ self.handleSubmit }>Send</button>
+                <button type="submit" class="btn btn-primary" onClick={ alert("self.handleSubmit") }>Send</button>
             </section>
         )
     }

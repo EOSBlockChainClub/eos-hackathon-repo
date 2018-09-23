@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const { Consumer } = React.createContext();
+import {ContextProvider} from "../context-provider.js"
 
 export default class AccountSelector extends Component {
     constructor(props) {
@@ -18,12 +18,11 @@ export default class AccountSelector extends Component {
                         aria-haspopup="true" aria-expanded="false">
                         Select Account
                     </button>
-                    <Consumer>
-                        {
+                    <ContextProvider.Consumer>
+                        { 
                             value => console.log(value)
-                            
                         }
-                    </Consumer>
+                    </ContextProvider.Consumer>
                 </div>
             </section>
         )
