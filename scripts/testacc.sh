@@ -2,6 +2,8 @@
 
 mkdir -p ./keys/testkeys
 
+cleos wallet unlock --password `cat ./keys/masterpass.txt`
+
 for i in {a..i}
 do
   cleos create key --file /opt/eosio/bin/keys/testkeys/testkeyactive$i.txt

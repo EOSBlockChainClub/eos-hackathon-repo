@@ -1,4 +1,4 @@
-cleos wallet unlock --password PW5K2g2HyZxm44Vu74aSL9x3GoB354YDMTUXENhcEaP9ykYVU9DZK
+cleos wallet unlock --password `cat ./keys/masterpass.txt`
 
 ### User Pool ####
 users=()
