@@ -17,7 +17,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eos: Eos({ keyProvider: allAccounts.requester.owner.privateKey }),
+      eosRequester: Eos({ keyProvider: allAccounts.requester.owner.privateKey }),
+      eosDataProvider: Eos({ keyProvider: allAccounts.dataProvider.owner.privateKey }),
       account: null
     };
   }
@@ -28,20 +29,23 @@ class App extends Component {
 
         <div className="view-top-bar">
             <div className="view-top-bar__logo">LOGO</div>
-            <AccountSelector props={{eos:this.state.eos, account:this.state.account}} />
+            <AccountSelector props={{ eos:this.state.eosRequester, account:this.state.account }} />
 
         </div>
 
         <div className="view-left">
-          <NavLeft props={{eos:this.state.eos, account:this.state.account}} />
+          <NavLeft props={{ eos:this.state.eosRequester, account:this.state.account }} />
         </div>
         <div className="view-right-top">
-          <DataLinkList props={{eos:this.state.eos, account:this.state.account}} />
+          <DataLinkList props={{ eos:this.state.eosRequester, account:this.state.account }} />
             
         </div>
         <div className="view-right-bottom">
             <div className="view-right-bottom__inputs card-shadow">
-              <BottomPanel props={{eos:this.state.eos, account:this.state.account}} />
+              <BottomPanel props={{
+                eosRequester:this.state.eosRequester,
+                eosDataProvider:this.state.eosDataProvider,
+                account:this.state.account }} />
             </div>
         </div>
     </div>

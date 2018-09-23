@@ -52,7 +52,7 @@ export default class SendAgreement extends Component {
                         console.error("Sending agreement failed");
                     }
                 },
-                error => console.log("Sending agreement failed\n", error.message)
+                error => console.error("Sending agreement failed\n", error.message)
             )
             .catch(console.error);
     };
