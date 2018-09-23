@@ -65,13 +65,13 @@ export default class SendAgreement extends Component {
 
     render() {
         return (
-            <section id="part-1" class="card-shadow">
+            <section id="part-1" className="card-shadow">
                 <h2>1: Send Agreement</h2>
                 <form onSubmit={this.handleSubmit}>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="input-1a" placeholder="Input #" ref={(input) => this.agreement = input}/>
+                <div className="form-group">
+                    <input type="text" className="form-control" id="input-1a" placeholder="Input #" ref={(input) => this.agreement = input}/>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </section>
         )

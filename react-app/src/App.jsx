@@ -27,21 +27,21 @@ class App extends Component {
     return (
       <div id="main">
 
-        <div class="view-top-bar">
-            <div class="view-top-bar__logo">LOGO</div>
+        <div className="view-top-bar">
+            <div className="view-top-bar__logo">LOGO</div>
             <AccountSelector props={{eos:this.state.eos, account:this.state.account}} />
 
         </div>
 
-        <div class="view-left">
+        <div className="view-left">
           <NavLeft props={{eos:this.state.eos, account:this.state.account}} />
         </div>
-        <div class="view-right-top">
+        <div className="view-right-top">
           <DataLinkList props={{eos:this.state.eos, account:this.state.account}} />
             
         </div>
-        <div class="view-right-bottom">
-            <div class="view-right-bottom__inputs card-shadow">
+        <div className="view-right-bottom">
+            <div className="view-right-bottom__inputs card-shadow">
               <BottomPanel props={{eos:this.state.eos, account:this.state.account}} />
             </div>
         </div>

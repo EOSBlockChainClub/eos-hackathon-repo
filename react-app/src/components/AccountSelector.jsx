@@ -12,14 +12,14 @@ export default class AccountSelector extends Component {
 
     render() {
         return (
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Select Account
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Requester A</a>
-                    <a class="dropdown-item" href="#">Requester B</a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a className="dropdown-item" href="#">Requester A</a>
+                    <a className="dropdown-item" href="#">Requester B</a>
                 </div>
             </div>
         )

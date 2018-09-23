@@ -14,54 +14,54 @@ export default class BottomPanel extends Component {
 
     render() {
         return (
-            <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
+            <div className="tab-content" id="nav-tabContent">
+                    <div className="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
                 
                       <SendAgreement props={{eos:this.state.eos, account:this.state.account}}/>
 
                     </div>
-                    <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
-                        <section id="part-3" class="card-shadow">
+                    <div className="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
+                        <section id="part-3" className="card-shadow">
                             <h2>3: Check Agreement</h2>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="input-3a" placeholder="Input Account"/>
-                                <input type="text" class="form-control" id="input-3b" placeholder="Input #"/>
+                            <div className="form-group">
+                                <input type="text" className="form-control" id="input-3a" placeholder="Input Account"/>
+                                <input type="text" className="form-control" id="input-3b" placeholder="Input #"/>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </section>
                     </div>
-                    <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">
-                        <section id="part-4" class="card-shadow">
+                    <div className="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">
+                        <section id="part-4" className="card-shadow">
                             <h2>4: Send Data</h2>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="input-4a" placeholder="Input # Agreement"/>
-                                <input type="text" class="form-control" id="input-4b" placeholder="Input # Data"/>
+                            <div className="form-group">
+                                <input type="text" className="form-control" id="input-4a" placeholder="Input # Agreement"/>
+                                <input type="text" className="form-control" id="input-4b" placeholder="Input # Data"/>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </section>
                     </div>
-                    <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">
-                        <section id="part-5" class="card-shadow">
+                    <div className="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">
+                        <section id="part-5" className="card-shadow">
                             <h2>5: Trace Data</h2>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="input-5a" placeholder="Input # Data"/>
-                                <input type="text" class="form-control" id="input-5b" placeholder="Input Requester Account"/>
+                            <div className="form-group">
+                                <input type="text" className="form-control" id="input-5a" placeholder="Input # Data"/>
+                                <input type="text" className="form-control" id="input-5b" placeholder="Input Requester Account"/>
                             </div>
-                            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
+                            <button type="submit" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
 
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Chart</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog" role="document">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title" id="exampleModalLabel">Chart</h5>
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div className="modal-body">
                             
                                             <section>
-                                                <table class="table table-striped card-shadow">
+                                                <table className="table table-striped card-shadow">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">Origin</th>
@@ -80,8 +80,8 @@ export default class BottomPanel extends Component {
                                             </section>
                             
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>

@@ -27,8 +27,8 @@ export default class DataLinkList extends Component {
 
     render() {
         return (
-            <div class="view-right-top__data-points card-shadow">
-                <table class="table table-striped view-right-top__data-points-table">
+            <div className="view-right-top__data-points card-shadow">
+                <table className="table table-striped view-right-top__data-points-table">
                     <thead>
                         <tr>
                             <th scope="col">Origin</th>
