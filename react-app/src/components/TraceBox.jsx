@@ -6,7 +6,7 @@ export default class TraceBox extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        eos: props.props.eosRequester,
+        eos: props.props.eos,
         account: props.props.account,
         route: []
       };

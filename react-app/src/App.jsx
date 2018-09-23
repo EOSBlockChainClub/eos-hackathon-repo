@@ -28,7 +28,9 @@ class App extends Component {
       <div id="main">
 
         <div className="view-top-bar">
-            <div className="view-top-bar__logo">LOGO</div>
+            <div class="view-top-bar__logo">
+                <img src="/img/agreeos-logo-white.svg" alt="Agreeos Logo"/>
+            </div>
             <AccountSelector props={{ eos:this.state.eosRequester, account:this.state.account }} />
 
         </div>
