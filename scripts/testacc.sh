@@ -2,16 +2,21 @@
 
 mkdir -p ./keys/testkeys
 
-for i in {a..g}
+for i in {a..i}
 do
   cleos create key --file /opt/eosio/bin/keys/testkeys/testkeyactive$i.txt
   cleos create key --file /opt/eosio/bin/keys/testkeys/testkeyowner$i.txt
 
-  pbkey="$(grep Public ./keys/testkeys/testkeyactive$i.txt | awk '{print $3}')"
-  pvkey="$(grep Private ./keys/testkeys/testkeyowner$i.txt | awk '{print $3}')"
+  pbkeya="$(grep Public ./keys/testkeys/testkeyactive$i.txt | awk '{print $3}')"
+  pvkeya="$(grep Private ./keys/testkeys/testkeyactive$i.txt | awk '{print $3}')"
 
-  cleos wallet import --private-key ${pvkey}
+  cleos wallet import --private-key ${pvkeya}
 
-  cleos create account eosio test$i ${pbkey} ${pbkey}
+  pbkeyo="$(grep Public ./keys/testkeys/testkeyowner$i.txt | awk '{print $3}')"
+  pvkeyo="$(grep Private ./keys/testkeys/testkeyowner$i.txt | awk '{print $3}')"
+
+  cleos wallet import --private-key ${pvkeyo}
+
+  cleos create account eosio test$i ${pbkeya} ${pbkeyo}
 
 done
