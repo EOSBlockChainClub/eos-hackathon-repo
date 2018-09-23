@@ -31,9 +31,11 @@ export default class DataLinkList extends Component {
                 <table className="table table-striped view-right-top__data-points-table">
                     <thead>
                         <tr>
+                            <th scope="col">Prim Key</th>
                             <th scope="col">Origin</th>
                             <th scope="col">Destination</th>
                             <th scope="col">Agreement Hash</th>
+                            <th scope="col">Data Hash</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,9 +52,11 @@ export default class DataLinkList extends Component {
 const DataLinkTableRow = ({linkData}) => {
     return(
         <tr>
-            <td>{linkData.requester}</td>
-            <td>{linkData.dataprovider}</td>
-            <td>{linkData.agreement}</td>
+            <td>{ linkData.prim_key }</td>
+            <td>{ linkData.requester }</td>
+            <td>{ linkData.dataprovider }</td>
+            <td>{ linkData.agreement }</td>
+            <td>{ linkData.data }</td>
         </tr>
     )
 }
