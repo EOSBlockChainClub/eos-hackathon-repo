@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-const Eos = require("eosjs");
-//const allKeys = require("../../../app/pickKeys.js")();
 const agreementContractName = "agreement";
 
 
@@ -11,6 +9,7 @@ export default class SendAgreement extends Component {
           eos: props.props.eos,
           account: props.props.account
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
@@ -19,7 +18,7 @@ export default class SendAgreement extends Component {
         console.log("handle submit");
         console.log(event);
 
-        let agreement = event.agreement.value;
+        let agreement = this.props.agreement;
 
         return this.state.eos.contract(agreementContractName)
             .then(agreement => agreement.sendagr(
@@ -32,7 +31,7 @@ export default class SendAgreement extends Component {
                     scope: agreementContractName,
                     authorization: [{
                         actor: "requester",
-                        permission: 'active',
+                        permission: "active",
                     }]
                 }))
             .then(
@@ -59,7 +58,8 @@ export default class SendAgreement extends Component {
                     error: "Failed to send\n" + error.message
                 })
                 */
-            );
+            )
+            .catch(console.error);
 
     };
 
@@ -69,7 +69,9 @@ export default class SendAgreement extends Component {
                 <h2>1: Send Agreement</h2>
                 <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <input type="text" className="form-control" id="input-1a" placeholder="Input #" ref={(input) => this.agreement = input}/>
+                    <input type="text" className="form-control" id="input-1a" placeholder="Input #" ref={(input) => this.agreement = input}
+                        value={ this.props.agreement }
+                    />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
                 </form>

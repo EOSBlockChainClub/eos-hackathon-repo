@@ -12,13 +12,12 @@ import BottomPanel from "./components/BottomPanel.jsx"
 
 
 const allAccounts = require("./utils/keys.json");
-//const { Provider } = React.createContext({ allAccounts: allAccounts });
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eos: Eos({keyProvider: "5K4sG3qxFFbRyFr896g8rfqFPDAwkZnVG6W17FGdu2gQTT3w1L4"}),
+      eos: Eos({ keyProvider: allAccounts.requester.owner.privateKey }),
       account: null
     };
   }
