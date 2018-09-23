@@ -1,7 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  margin: 10%; }
+  font-weight: 400; }
 
 #part-1,
 #part-2,
@@ -15,6 +14,34 @@ body {
 #main input {
   max-width: 250px;
   margin: 20px 0; }
+
+.view-left {
+  width: 20%;
+  height: 100vh;
+  background: #DADADA;
+  float: left; }
+
+.view-right-top {
+  width: 80%;
+  background: #EDEDED;
+  height: 30vh;
+  float: left; }
+  .view-right-top__data-points {
+    background: #FAFAFA;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px; }
+
+.view-right-bottom {
+  width: 80%;
+  background: #EDEDED;
+  height: 70vh;
+  float: left; }
+  .view-right-bottom__inputs {
+    background: #FAFAFA;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px; }
 
 .spacer {
   margin: 50px; }

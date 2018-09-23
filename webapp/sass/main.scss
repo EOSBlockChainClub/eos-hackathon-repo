@@ -1,8 +1,13 @@
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    margin: 10%;
+    //margin: 10%;
 }
+
+$background-color: #EDEDED;
+$foreground-color: #FAFAFA;
+$tertiary-color: #DADADA;
+
 
 #part-1,
 #part-2,
@@ -17,6 +22,41 @@ body {
 #main input {
     max-width: 250px;
     margin: 20px 0;
+}
+
+.view-left {
+    width: 20%;
+    height: 100vh;
+    background: $tertiary-color;
+    float: left;
+}
+
+.view-right-top {
+    width: 80%;
+    background: $background-color;
+    height: 30vh;
+    float: left;
+
+    &__data-points {
+        background: $foreground-color;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        margin: 20px;
+    }
+}
+
+.view-right-bottom {
+    width: 80%;
+    background: $background-color;
+    height: 70vh;
+    float: left;
+
+    &__inputs {
+        background: $foreground-color;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        margin: 20px;
+    }
 }
 
 .spacer {
