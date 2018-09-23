@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Eos from "eosjs";
+
 import {ContextProvider} from "./context-provider.js"
 
 import AccountSelector from "./components/AccountSelector.jsx"
@@ -16,7 +18,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eos: null,
+      eos: Eos({keyProvider: "5K4sG3qxFFbRyFr896g8rfqFPDAwkZnVG6W17FGdu2gQTT3w1L4"}),
       account: null
     };
   }
@@ -27,20 +29,20 @@ class App extends Component {
 
         <div class="view-top-bar">
             <div class="view-top-bar__logo">LOGO</div>
-            <AccountSelector />
+            <AccountSelector props={{eos:this.state.eos, account:this.state.account}} />
 
         </div>
 
         <div class="view-left">
-          <NavLeft />
+          <NavLeft props={{eos:this.state.eos, account:this.state.account}} />
         </div>
         <div class="view-right-top">
-          <DataLinkList />
+          <DataLinkList props={{eos:this.state.eos, account:this.state.account}} />
             
         </div>
         <div class="view-right-bottom">
             <div class="view-right-bottom__inputs card-shadow">
-              <BottomPanel />
+              <BottomPanel props={{eos:this.state.eos, account:this.state.account}} />
             </div>
         </div>
     </div>

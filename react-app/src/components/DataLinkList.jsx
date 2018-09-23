@@ -4,6 +4,25 @@ import {ContextProvider} from "../context-provider.js"
 export default class DataLinkList extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+          eos: props.props.eos,
+          account: props.props.account,
+          linkData: []
+        };
+    }
+
+    componentDidMount() {
+        var self = this;
+
+        this.state.eos.getTableRows({
+          code:'agreement',
+          scope:'agreement',
+          table:'transfers',
+          json:true
+        }).then(function(res) {
+          console.log(res)
+          self.setState({ eos: self.state.eos, linkData: res.rows });
+        });
     }
 
     render() {
@@ -18,54 +37,22 @@ export default class DataLinkList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {this.state.linkData.map((linkData,i) => 
+                          <DataLinkTableRow linkData={linkData} key={i}/>
+                        )}
                     </tbody>
                 </table>
             </div>
         )
     }
+}
+
+const DataLinkTableRow = ({linkData}) => {
+    return(
+        <tr>
+            <td>{linkData.requester}</td>
+            <td>{linkData.dataprovider}</td>
+            <td>{linkData.agreement}</td>
+        </tr>
+    )
 }
