@@ -8,7 +8,7 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cp ../webapp/css/main.css src/index.css && cp ../webapp/index.html public/index.html && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
