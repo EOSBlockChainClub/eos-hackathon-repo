@@ -60,10 +60,10 @@ export default class SendAgreement extends Component {
     render() {
         return (
             <section id="part-1" className="card-shadow">
-                <h2>1: Send Agreement</h2>
+                <h2>1: Send Agreement Hash</h2>
                 <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <input type="text" className="form-control" id="input-1a" placeholder="Input #" ref={(input) => this.agreement = input}
+                    <input type="text" className="form-control" id="input-1a" placeholder="Input Hash" 
                         value={ this.state.agreement }
                         onChange={ this.updateAgreementValue }
                     />

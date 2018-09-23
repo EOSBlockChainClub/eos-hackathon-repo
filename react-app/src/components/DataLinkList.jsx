@@ -33,7 +33,7 @@ export default class DataLinkList extends Component {
                         <tr>
                             <th scope="col">Origin</th>
                             <th scope="col">Destination</th>
-                            <th scope="col">Agreement #</th>
+                            <th scope="col">Agreement Hash</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -24,8 +24,8 @@ export default class BottomPanel extends Component {
                         <section id="part-3" className="card-shadow">
                             <h2>3: Check Agreement</h2>
                             <div className="form-group">
-                                <input type="text" className="form-control" id="input-3a" placeholder="Input Account"/>
-                                <input type="text" className="form-control" id="input-3b" placeholder="Input #"/>
+                                <input type="text" className="form-control" id="input-3a" placeholder="Requester Account"/>
+                                <input type="text" className="form-control" id="input-3b" placeholder="Agreement Hash"/>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </section>
@@ -34,8 +34,8 @@ export default class BottomPanel extends Component {
                         <section id="part-4" className="card-shadow">
                             <h2>4: Send Data</h2>
                             <div className="form-group">
-                                <input type="text" className="form-control" id="input-4a" placeholder="Input # Agreement"/>
-                                <input type="text" className="form-control" id="input-4b" placeholder="Input # Data"/>
+                                <input type="text" className="form-control" id="input-4a" placeholder="Unique Id"/>
+                                <input type="text" className="form-control" id="input-4b" placeholder="Data Hash"/>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </section>
@@ -66,7 +66,7 @@ export default class BottomPanel extends Component {
                                                         <tr>
                                                             <th scope="col">Origin</th>
                                                             <th scope="col">Destination</th>
-                                                            <th scope="col">Agreement #</th>
+                                                            <th scope="col">Agreement Hash</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
