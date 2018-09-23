@@ -9,6 +9,9 @@
 # production
 /build
 
+# keys
+utils/keys.json
+
 # misc
 .DS_Store
 .env.local
