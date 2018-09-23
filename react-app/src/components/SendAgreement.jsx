@@ -30,7 +30,7 @@ export default class SendAgreement extends Component {
         const agreement = this.state.agreement;
 
         return this.state.eos.contract(agreementContractName)
-            .then(agreement => agreement.sendagr(
+            .then(agreementContract => agreementContract.sendagr(
                 { 
                     requester: "requester",
                     dataprovider: "dataprovider",
