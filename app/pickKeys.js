@@ -16,11 +16,17 @@ module.exports = function() {
     };
 
     return {
-        requesterOwner: extract("requesterkeyowner.txt"),
-        requesterActive: extract("requesterkeyactive.txt"),
-        dataProviderOwner: extract("dataproviderkeyowner.txt"),
-        dataProviderActive: extract("dataproviderkeyactive.txt"),
-        userOwner: extract("userkeyowner.txt"),
-        userActive: extract("userkeyactive.txt")
+        requester: {
+            owner: extract("requesterkeyowner.txt"),
+            active: extract("requesterkeyactive.txt")
+        },
+        dataProvider: {
+            owner: extract("dataproviderkeyowner.txt"),
+            active: extract("dataproviderkeyactive.txt")
+        },
+        user: {
+            owner: extract("userkeyowner.txt"),
+            active: extract("userkeyactive.txt")
+        }
     };
 };
