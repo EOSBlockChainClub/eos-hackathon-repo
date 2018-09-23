@@ -1,0 +1,82 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    //margin: 10%;
+}
+
+$background-color: #EDEDED;
+$foreground-color: #FAFAFA;
+$tertiary-color: #DADADA;
+
+
+#part-1,
+#part-2,
+#part-3,
+#part-4,
+#part-5 {
+    margin-bottom: 100px;
+    padding: 20px;
+    max-width: 500px;
+}
+
+#main input {
+    max-width: 250px;
+    margin: 20px 0;
+}
+
+.view-left {
+    width: 20%;
+    height: 100vh;
+    background: $tertiary-color;
+    float: left;
+}
+
+.view-right-top {
+    width: 80%;
+    background: $background-color;
+    height: 50vh;
+    float: left;
+
+    &__data-points {
+        background: $foreground-color;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        margin: 20px;
+        padding: 20px;
+        overflow: auto;
+    }
+
+    &__data-points-table {
+        //margin: 20px;
+    }
+}
+
+.view-right-bottom {
+    width: 80%;
+    background: $background-color;
+    height: 50vh;
+    float: left;
+
+    &__inputs {
+        background: $foreground-color;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        margin: 20px;
+        padding: 20px;
+        overflow: auto;
+    }
+}
+
+.spacer {
+    margin: 50px;
+}
+
+.card-shadow {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+}
+
+.app-dropdown {
+    max-width: 500px;
+    padding: 20px;
+}

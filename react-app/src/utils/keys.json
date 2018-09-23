@@ -1,0 +1,32 @@
+{
+    "requester": {
+        "owner": {
+            "privateKey": "5K4sG3qxFFbRyFr896g8rfqFPDAwkZnVG6W17FGdu2gQTT3w1L4",
+            "publicKey": "EOS52YGLTe2u7AQth2MjfCbCx3aFCLVEAdD4hD5xUp9bcDX4eVEct"
+        },
+        "active": {
+            "privateKey": "5J2grrYbMS7EKtWRMopXy1rfM4pUiVNFUqTBTxPfGfUYy7PnWKK",
+            "publicKey": "EOS7oYQBosajq3irF7FLGByWJk7WKPAgMW8RtrK6yBpAKtsFjjEPD"
+        }
+    },
+    "dataProvider": {
+        "owner": {
+            "privateKey": "5KeNXdhUsbrxtvZJafZkyhgQt5qpuiNWEEuPhnjf5ZWnX7ZEmUj",
+            "publicKey": "EOS5ypAZWz584EkmNV1YnNRZog21cv4BZxGDyd4KV4gpM7rM4s3zx"
+        },
+        "active": {
+            "privateKey": "5JRUipwCn4GqMg3ppDTomHm4xmeD7DQZ3tYcSw6okiSWKwz4oVY",
+            "publicKey": "EOS5XmcRXU7uPhtofJuKaabHyJ3wGLepSpS7ptzwWrbp6KB7E2V9F"
+        }
+    },
+    "user": {
+        "owner": {
+            "privateKey": "5HumApJZvcTgj38MRGHgXcCnGECyCjT4NAjmkdFtRjVLTemNAb4",
+            "publicKey": "EOS6Tqz1EHdTD7erUtYLUeLAm8wQf4X4urxyyZpz1mUNgdfJVhH6j"
+        },
+        "active": {
+            "privateKey": "5Jr5cffqZMKaB4zqJ1PdHfLtxSpaeNVBGYrBzZXyDocb2kLNjvL",
+            "publicKey": "EOS74o9Us1ZSnCE1g4zcTicV26NYAwMrUd1zKko2ewdLPbuaEykUQ"
+        }
+    }
+}

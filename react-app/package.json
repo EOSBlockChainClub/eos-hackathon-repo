@@ -1,0 +1,21 @@
+{
+  "name": "react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "eosjs": "^16.0.8",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "./src/utils/prepareKeys.js && react-scripts start index.js",
+    "start-2": "cp ../webapp/css/main.css src/index.css && cp ../webapp/index.html public/index.html && ./src/utils/prepareKeys.js && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-create": "^1.0.2"
+  }
+}

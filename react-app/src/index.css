@@ -1,0 +1,86 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+
+#part-1,
+#part-2,
+#part-3,
+#part-4,
+#part-5 {
+  margin-bottom: 100px;
+  padding: 20px;
+  max-width: 500px; }
+
+#main input {
+  max-width: 250px;
+  margin: 20px 0; }
+
+.view-top-bar {
+  width: 100%;
+  height: 60px;
+  background: #565656;
+  position: relative; }
+  .view-top-bar .view-top-bar__logo {
+    line-height: 60px;
+    margin-left: 30px;
+    color: white; }
+  .view-top-bar .dropdown {
+    position: absolute;
+    top: 10px;
+    right: 20px; }
+  .view-top-bar #dropdownMenuButton {
+    background: #007bff;
+    border-color: #007bff; }
+  .view-top-bar .dropdown-menu {
+    transform: translate3d(0px, 38px, 0px) !important; }
+
+.view-left {
+  width: 20%;
+  height: 100vh;
+  background: #DADADA;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .view-left .nav {
+    border: 0;
+    margin-top: 20px; }
+    .view-left .nav-link {
+      width: 100%;
+      padding: 20px 0;
+      border: 0; }
+      .view-left .nav-link:hover {
+        border: 0; }
+
+.view-right-top {
+  width: 80%;
+  background: #EDEDED;
+  height: 50vh;
+  float: left; }
+  .view-right-top__data-points {
+    background: #FAFAFA;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    padding: 20px;
+    overflow: auto; }
+
+.view-right-bottom {
+  width: 80%;
+  background: #EDEDED;
+  height: 50vh;
+  float: left; }
+  .view-right-bottom__inputs {
+    background: #FAFAFA;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    padding: 20px;
+    overflow: auto; }
+
+.spacer {
+  margin: 50px; }
+
+.card-shadow {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px; }
