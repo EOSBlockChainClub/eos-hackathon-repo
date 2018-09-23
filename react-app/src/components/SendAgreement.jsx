@@ -8,7 +8,8 @@ export default class SendAgreement extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          eosClient: props.props.eos
+          eos: props.props.eos,
+          account: props.props.account
         };
     }
 
@@ -59,20 +60,11 @@ export default class SendAgreement extends Component {
     render() {
         return (
             <section id="part-1" class="card-shadow">
-                <h2>1: Request Agreement</h2>
+                <h2>1: Send Agreement</h2>
                 <div class="form-group">
-                    <input type="text"
-                        class="form-control"
-                        id="input-1a"
-                        value={ this.props.dataProvider }
-                        placeholder="Data provider account"/>
-                    <input type="text"
-                        class="form-control"
-                        id="input-1b"
-                        value={ this.props.agreementHash }
-                        placeholder="Agreement hash"/>
+                    <input type="text" class="form-control" id="input-1a" placeholder="Input #"/>
                 </div>
-                <button type="submit" class="btn btn-primary" onClick={ alert("self.handleSubmit") }>Send</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </section>
         )
     }

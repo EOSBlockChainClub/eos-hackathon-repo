@@ -12,19 +12,16 @@ export default class AccountSelector extends Component {
 
     render() {
         return (
-            <section className="app-dropdown card-shadow">
-                <div className="dropdown">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Select Account
-                    </button>
-                    <ContextProvider.Consumer>
-                        { 
-                            value => console.log(value)
-                        }
-                    </ContextProvider.Consumer>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Select Account
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Requester A</a>
+                    <a class="dropdown-item" href="#">Requester B</a>
                 </div>
-            </section>
+            </div>
         )
     }
 }
