@@ -7,10 +7,19 @@ export default class SendAgreement extends Component {
         super(props);
         this.state = {
           eos: props.props.eos,
-          account: props.props.account
+          account: props.props.account,
+          agreement: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateAgreementValue = this.updateAgreementValue.bind(this);
     }
+
+    updateAgreementValue(event) {
+        event.preventDefault();
+        this.setState({
+            agreement: event.target.value
+        });
+    }; 
 
     handleSubmit(event) {
         event.preventDefault();
@@ -18,7 +27,7 @@ export default class SendAgreement extends Component {
         console.log("handle submit");
         console.log(event);
 
-        let agreement = this.props.agreement;
+        const agreement = this.state.agreement;
 
         return this.state.eos.contract(agreementContractName)
             .then(agreement => agreement.sendagr(
@@ -37,30 +46,15 @@ export default class SendAgreement extends Component {
             .then(
                 result => {
                     console.log(JSON.stringify(result));
-                    /*if (result.processed.receipt.status == "executed") {
-                        dispatch({
-                            type: "INSERT_AGREEMENT",
-                            status: "success"
-                        });
+                    if (result.processed.receipt.status == "executed") {
+                        console.log("Sending agreement success");
                     } else {
-                        dispatch({
-                            type: "INSERT_AGREEMENT",
-                            status: "error",
-                            error: "Was not executed\n" + JSON.stringify(result, null, 4)
-                        });
+                        console.error("Sending agreement failed");
                     }
-                    */
-                }/*
-                ,
-                error => dispatch({
-                    type: "INSERT_AGREEMENT",
-                    status: "error",
-                    error: "Failed to send\n" + error.message
-                })
-                */
+                },
+                error => console.log("Sending agreement failed\n", error.message)
             )
             .catch(console.error);
-
     };
 
     render() {
@@ -70,7 +64,8 @@ export default class SendAgreement extends Component {
                 <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <input type="text" className="form-control" id="input-1a" placeholder="Input #" ref={(input) => this.agreement = input}
-                        value={ this.props.agreement }
+                        value={ this.state.agreement }
+                        onChange={ this.updateAgreementValue }
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
