@@ -36,6 +36,7 @@ export default class DataLinkList extends Component {
                             <th scope="col">Destination</th>
                             <th scope="col">Agreement Hash</th>
                             <th scope="col">Data Hash</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +58,7 @@ const DataLinkTableRow = ({linkData}) => {
             <td>{ linkData.dataprovider }</td>
             <td>{ linkData.agreement }</td>
             <td>{ linkData.data }</td>
+            <td> <a className="btn btn-warning">Request deletion</a></td>
         </tr>
     )
 }
