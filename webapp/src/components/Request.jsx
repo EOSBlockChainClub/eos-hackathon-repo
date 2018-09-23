@@ -11,6 +11,11 @@ export default class Request extends Component {
                         id="requestHash"
                         value={this.props.requestHash}
                         placeholder="RequestHash">
+                    <input type="text"
+                        class="form-control"
+                        id="dataProvider"
+                        value={this.props.dataProvider}
+                        placeholder="Data Provider Account">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </section>
@@ -22,6 +27,7 @@ export default class Request extends Component {
 function mapStateToProps(state, ownProps) {
     return {
         requestHash: state.requestHash,
+        dataProvider: state.dataProvider
     };
 }
 
