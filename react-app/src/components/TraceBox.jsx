@@ -8,12 +8,14 @@ export default class TraceBox extends Component {
       this.state = {
         eos: props.props.eos,
         account: props.props.account,
-        agreement: ""
+        route: []
       };
       this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   render() {
+    console.log("render called");
+    console.log(this.state);
         return (
           <section id="part-5" className="card-shadow">
             <h2>5: Trace Data</h2>
@@ -37,22 +39,7 @@ export default class TraceBox extends Component {
                         <div className="modal-body">
             
                             <section>
-                                <table className="table table-striped card-shadow">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Origin</th>
-                                            <th scope="col">Destination</th>
-                                            <th scope="col">Agreement Hash</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <ResultRouteTable data={this.state.route} />
                             </section>
             
                         </div>
@@ -69,7 +56,6 @@ export default class TraceBox extends Component {
 
     handleSubmit(event) {
       event.preventDefault();
-
       let datahash = this.datahash.value;
       let requester = this.requester.value;
 
@@ -80,8 +66,10 @@ export default class TraceBox extends Component {
         json: true,
         limit: "100"
       }).then((obj) => {
-        getPath(datahash, requester, obj["rows"]);
-        getPathReverse(datahash, requester, obj["rows"]);
+        console.log("received:");
+        console.log(obj);
+        this.setState({eos:this.state.eos, account:this.state.account, route:obj.rows}); //.route = getPath(datahash, requester, obj["rows"]);
+        //this.state.route = getPathReverse(datahash, requester, obj["rows"]);
       });
     }
 }
@@ -128,6 +116,8 @@ function getPathReverse(hash, sender, rows) {
             console.log(pathsArray[paths][path].dataprovider + "->" + pathsArray[paths][path].requester)
         }
     }
+
+    return pathsArray;
 }
 
 function getNextPathReverse(startingPath, rowsWithHash) {
@@ -188,4 +178,34 @@ function getNextPath(startingPath, rowsWithHash) {
     } catch (err) {
         return false;
     } 
+}
+
+const ResultRouteTable = ({data}) => (
+    <table className="table table-striped card-shadow">
+        <thead>
+            <tr>
+                <th scope="col">Origin</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Agreement Hash</th>
+                <th scope="col">Data Hash</th>
+            </tr>
+        </thead>
+        <tbody>
+            {data.map((data,i) => 
+              <ResultLinkRow data={data} key={i}/>
+            )}
+        </tbody>
+    </table>
+)
+
+
+const ResultLinkRow = ({data}) => {
+    return(
+        <tr>
+            <td>{data.dataprovider}</td>
+            <td>{data.requester}</td>
+            <td>{data.requester}</td>
+            <td>{data.data}</td>
+        </tr>
+    )
 }
