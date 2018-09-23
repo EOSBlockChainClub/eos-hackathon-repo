@@ -6,6 +6,10 @@ import SendAgreement from "./SendAgreement.jsx"
 export default class BottomPanel extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+          eos: props.props.eos,
+          account: props.props.account
+        };
     }
 
     render() {
@@ -13,7 +17,7 @@ export default class BottomPanel extends Component {
             <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
                 
-                      <SendAgreement props={{eos:this.eos, account:this.account}}/>
+                      <SendAgreement props={{eos:this.state.eos, account:this.state.account}}/>
 
                     </div>
                     <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">

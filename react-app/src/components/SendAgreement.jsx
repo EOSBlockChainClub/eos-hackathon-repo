@@ -15,56 +15,64 @@ export default class SendAgreement extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        /*
-        const eos = Eos({
-                keyProvider: allKeys[info.requesterOwnerName].privateKey
-            });
-        return eos.contract(agreementContractName)
+
+        console.log("handle submit");
+        console.log(event);
+
+        let agreement = event.agreement.value;
+
+        return this.state.eos.contract(agreementContractName)
             .then(agreement => agreement.sendagr(
                 { 
-                    requester: info.requesterActiveAcc,
-                    dataprovider: info.dataProviderAcc,
-                    hash: info.hash
+                    requester: "requester",
+                    dataprovider: "dataprovider",
+                    hash: agreement
                 },
                 {
                     scope: agreementContractName,
                     authorization: [{
-                        actor: info.requesterActiveAcc,
+                        actor: "requester",
                         permission: 'active',
                     }]
                 }))
             .then(
                 result => {
                     console.log(JSON.stringify(result));
-                    if (result.processed.receipt.status == "executed") {
+                    /*if (result.processed.receipt.status == "executed") {
                         dispatch({
-                            type: INSERT_AGREEMENT,
+                            type: "INSERT_AGREEMENT",
                             status: "success"
                         });
                     } else {
                         dispatch({
-                            type: INSERT_AGREEMENT,
+                            type: "INSERT_AGREEMENT",
                             status: "error",
                             error: "Was not executed\n" + JSON.stringify(result, null, 4)
                         });
                     }
-                },
+                    */
+                }/*
+                ,
                 error => dispatch({
-                    type: INSERT_AGREEMENT,
+                    type: "INSERT_AGREEMENT",
                     status: "error",
                     error: "Failed to send\n" + error.message
-                }));
-        */
+                })
+                */
+            );
+
     };
 
     render() {
         return (
             <section id="part-1" class="card-shadow">
                 <h2>1: Send Agreement</h2>
+                <form onSubmit={this.handleSubmit}>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="input-1a" placeholder="Input #"/>
+                    <input type="text" class="form-control" id="input-1a" placeholder="Input #" ref={(input) => this.agreement = input}/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </section>
         )
     }
